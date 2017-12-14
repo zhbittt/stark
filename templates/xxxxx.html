@@ -1,0 +1,21 @@
+{% for k,item in table_dict.items %}
+    {% if k == "table_body_data" %}
+        <tbody>
+        {% for obj in item %}
+            <tr>
+            {% for col in obj %}
+            <td>{{ col }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    {% else %}
+        <thead>
+        <tr>
+        {% for head in item %}
+            <td>{{ head }}</td>
+        {% endfor %}
+        </tr>
+    </thead>
+    {% endif %}
+{% endfor %}

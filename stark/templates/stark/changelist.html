@@ -1,0 +1,50 @@
+{% load staticfiles %}
+{#{% load stark %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "stark/bootstrap-3.3.7/css/bootstrap.css" %}" />
+    <script src="{% static "stark/bootstrap-3.3.7/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "stark/bootstrap-3.3.7/js/jquery.cookie.js" %}"></script>
+</head>
+<body>
+<div class="container">
+
+    <h1>列表页面</h1>
+    <table class="table table_bordered">
+
+
+{#        {% table_html request %}#}
+        <thead>
+        <tr>
+        {% for head in head_list %}
+            <td>{{ head }}</td>
+        {% endfor %}
+        </tr>
+
+        </thead>
+        <tbody>
+            {% for obj in data_list %}
+                <tr>
+                {% for col in obj %}
+
+                <td>{{ col }}</td>
+
+                {% endfor %}
+
+                </tr>
+            {% endfor %}
+
+
+        </tbody>
+
+
+    </table>
+
+</div>
+
+
+</body>
+</html>
